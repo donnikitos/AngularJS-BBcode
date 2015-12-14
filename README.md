@@ -29,12 +29,12 @@ website.html
 	<html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript"></script>		// Include main AngularJS-code
-		<script src="angularjs-bb.js" type="text/javascript"></script>																	// Include BBCode extension
-		<script src="your-app.js" type="text/javascript"></script>																		// Include your app code
+		<script src="angularjs-bb.js" type="text/javascript"></script>		// Include BBCode extension
+		<script src="your-app.js" type="text/javascript"></script>			// Include your app code
 	</head>
 
 	<body ng-app="your-app">
-		<div ks-nl2br ks-bb-code>																										// Apply new line formatter with ks-nl2br and apply bb code formatter with ks-bb-code
+		<div ks-nl2br ks-bb-code>											// Apply new line formatter with ks-nl2br and apply bb code formatter with ks-bb-code
 			Dies ist [b]fetter[/b] Text.
 			Dies ist [I]kursiver[/I] Text.
 			Dies ist [U]unterstrichener[/U] Text.

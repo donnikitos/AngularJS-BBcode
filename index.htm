@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript"></script>
+	<script src="angularjs-bb.js" type="text/javascript"></script>        // Include BBCode extension
+</head>
+
+<body ng-app="bbModule">                                                // Load BBCode Module without any apps
+	<div ks-nl2br ks-bb-code>                                             // Apply new line formatter with ks-nl2br and apply bb code formatter with ks-bb-code
+		Dies ist [b]fetter[/b] Text.
+		Dies ist [I]kursiver[/I] Text.
+		Dies ist [U]unterstrichener[/U] Text.
+		Dies ist [S]durchgestrichener[/S] Text.
+
+		[URL]http://www.example.com[/URL]
+	</div>
+</body>
+</html>

@@ -12,7 +12,10 @@ angular.module('bbModule', [])
 		"img": "<img src=\"$1\" />",																	// Image without title
 		"img=([^\\[\\]<>]+?)": "<img src=\"$1\" alt=\"$2\" />",											// Image with title
 		"url": "<a href=\"$1\" target=\"_blank\" title=\"$1\">$1</a>",									// Simple URL
-		"url=([^\\[\\]<>]+?)": "<a href=\"$1\" target=\"_blank\" title=\"$2\">$2</a>"					// URL with title
+		"url=([^\\[\\]<>]+?)": "<a href=\"$1\" target=\"_blank\" title=\"$2\">$2</a>",					// URL with title
+		"test": function(complete, inside) {
+			return inside.toUpperCase();
+		}
 	})
 
 // Format BB code
@@ -26,7 +29,7 @@ angular.module('bbModule', [])
 					var regexp = new RegExp('\\[' + i + '\\](.+?)\\[\/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi');
 
 					if(typeof snippets[i] == 'function') {
-						contents = contents.replace(regexp, snippets[i].call(this, contents));
+						contents = contents.replace(regexp, snippets[i]);
 					}
 					else {
 						contents = contents.replace(regexp, snippets[i]);

@@ -1,3 +1,4 @@
+//* AngularJS-BBcode 0.00.03 | Copyright (c) 2015 Nikita "donnikitos" Nitichevski | MIT License *//
 	"use strict";
 
 

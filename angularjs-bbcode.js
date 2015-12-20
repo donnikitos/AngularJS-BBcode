@@ -28,12 +28,7 @@ angular.module('bbModule', [])
 				for(var i in snippets) {
 					var regexp = new RegExp('\\[' + i + '\\](.+?)\\[\/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi');
 
-					if(typeof snippets[i] == 'function') {
-						contents = contents.replace(regexp, snippets[i]);
-					}
-					else {
-						contents = contents.replace(regexp, snippets[i]);
-					}
+					contents = contents.replace(regexp, snippets[i]);
 				}
 
 				element.html(contents);

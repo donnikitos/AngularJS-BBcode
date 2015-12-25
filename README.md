@@ -34,7 +34,7 @@ website.html
 	</head>
 
 	<body ng-app="your-app">
-		<div ks-nl2br ks-bbcode>											// Apply new line formatter with ks-nl2br and apply bb code formatter with ks-bb-code
+		<div ks-nl2br ks-bbcode>											// Apply new line formatter with ks-nl2br and apply bb code formatter with ks-bbcode
 			Dies ist [b]fetter[/b] Text.
 			Dies ist [I]kursiver[/I] Text.
 			Dies ist [U]unterstrichener[/U] Text.

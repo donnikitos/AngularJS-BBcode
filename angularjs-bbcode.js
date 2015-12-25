@@ -1,5 +1,11 @@
-//* AngularJS-BBcode 0.00.03 | Copyright (c) 2015 Nikita "donnikitos" Nitichevski | MIT License *//
+//* AngularJS-BBcode 0.00.08 | Copyright (c) 2015 Nikita "donnikitos" Nitichevski | MIT License *//
 	"use strict";
+
+
+angular.module('testApp', ['bbModule'])
+.controller('testController', ['$scope', function($scope) {
+	$scope.text = "Dies ist [b]fetter[/b] Text.\nDies ist [I]kursiver[/I] Text.\nDies ist [U]unterstrichener[/U] Text.\nDies ist [S]durchgestrichener[/S] Text.\n\n[URL]http://www.example.com[/URL]\n[test]http://www.example.com[/test]";
+}]);
 
 
 angular.module('bbModule', [])
@@ -14,25 +20,27 @@ angular.module('bbModule', [])
 		"img=([^\\[\\]<>]+?)": "<img src=\"$1\" alt=\"$2\" />",											// Image with title
 		"url": "<a href=\"$1\" target=\"_blank\" title=\"$1\">$1</a>",									// Simple URL
 		"url=([^\\[\\]<>]+?)": "<a href=\"$1\" target=\"_blank\" title=\"$2\">$2</a>",					// URL with title
-		"test": function(complete, inside) {
-			return inside.toUpperCase();
+		"style": function(complete, y) {
+			return y.toUpperCase();
 		}
 	})
 
 // Format BB code
-	.directive('ksBbCode', ['snippets', function(snippets) {
+	.directive('ksBbcode', ['snippets', function(snippets) {
 		return {
 			"restrict": "A",
-			"link": function(scope, element, attrs) {
-				var contents = element.html().replace(/^\s+|\s+$/i, '');
+			"link": function($scope, $element, $attrs) {
+				$scope.$watch(function() {
+					var contents = $element.html().replace(/^\s+|\s+$/i, '');
 
-				for(var i in snippets) {
-					var regexp = new RegExp('\\[' + i + '\\](.+?)\\[\/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi');
+					for(var i in snippets) {
+						var regexp = new RegExp('\\[' + i + '\\](.+?)\\[\/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi');
 
-					contents = contents.replace(regexp, snippets[i]);
-				}
+						contents = contents.replace(regexp, snippets[i]);
+					}
 
-				element.html(contents);
+					$element.html(contents);
+				});
 			}
 		};
 	}])

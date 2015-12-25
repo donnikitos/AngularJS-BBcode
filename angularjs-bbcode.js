@@ -1,4 +1,4 @@
-//* AngularJS-BBcode 0.00.08 | Copyright (c) 2015 Nikita "donnikitos" Nitichevski | MIT License *//
+//* AngularJS-BBcode 0.00.10 | Copyright (c) 2015 Nikita "donnikitos" Nitichevski | MIT License *//
 	"use strict";
 
 
@@ -49,12 +49,14 @@ angular.module('bbModule', [])
 	.directive('ksNl2br', [function() {
 		return {
 			"restrict": "A",
-			"link": function(scope, element, attrs) {
-				var contents = element.html().replace(/^\s+|\s+$/i, '');
+			"link": function($scope, $element, $attrs) {
+				$scope.$watch(function() {
+					var contents = $element.html().replace(/^\s+|\s+$/i, '');
 
-				contents = contents.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/gi, '$1<br>$2');
+					contents = contents.replace(/(?:\r\n|\n|\r)/gi, '<br>');
 
-				element.html(contents);
+					$element.html(contents);
+				});
 			}
 		};
 	}]);

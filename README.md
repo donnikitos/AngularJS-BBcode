@@ -10,14 +10,14 @@ See attached index.htm file for examples.
 Available BB code snippets
 ==========================
 
-- Bolded text				[b]example-text[/b]
-- Underlined text			[u]example-text[/u]
-- Italized Text				[i]example-text[/i]
-- Strikethrough text		[s]example-text[/s]
-- Simple Image				[img]url-to-image[/img]
-- Image with title			[img=url-to-image]image-title[/img]
-- Simple URL				[url]http://www.example.com[/url]
-- URL with Title			[url=http://www.example.com]url-title[/url]
+- **Bolded** text					[b]example-text[/b]
+- Underlined text					[u]example-text[/u]
+- _Italized_ Text					[i]example-text[/i]
+- ~~Strikethrough~~ text				[s]example-text[/s]
+- Simple Image						[img]url-to-image[/img]
+- Image with title					[img=url-to-image]image-title[/img]
+- Simple URL						[url]http://www.example.com[/url]
+- URL with Title					[url=http://www.example.com]url-title[/url]
 
 
 Usage

@@ -10,10 +10,11 @@ See attached index.htm file for examples.
 Available BB code snippets
 ==========================
 
-- **Bolded** text					[b]example-text[/b]
-- Underlined text					[u]example-text[/u]
+- **Bolded** Text					[b]example-text[/b]
+- Underlined Text					[u]example-text[/u]
 - _Italized_ Text					[i]example-text[/i]
-- ~~Strikethrough~~ text				[s]example-text[/s]
+- ~~Strikethrough~~ Text				[s]example-text[/s]
+- Colored Text						[color=#FF0000]example-text[/color]
 - Simple Image						[img]url-to-image[/img]
 - Image with title					[img=url-to-image]image-title[/img]
 - Simple URL						[url]http://www.example.com[/url]
@@ -29,7 +30,7 @@ website.html
 	<html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript"></script>		// Include main AngularJS-code
-		<script src="angularjs-bb.js" type="text/javascript"></script>		// Include BBCode extension
+		<script src="angularjs-bbcode.js" type="text/javascript"></script>		// Include BBCode extension
 		<script src="your-app.js" type="text/javascript"></script>			// Include your app code
 	</head>
 
@@ -39,6 +40,7 @@ website.html
 			Dies ist [I]kursiver[/I] Text.
 			Dies ist [U]unterstrichener[/U] Text.
 			Dies ist [S]durchgestrichener[/S] Text.
+			Dies ist [color=#ff0000]farbener[/I] Text.
 	
 			[URL]http://www.example.com[/URL]
 		</div>

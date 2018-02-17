@@ -15,6 +15,7 @@ angular.module('bbModule', [])
 		"img=([^\\[\\]<>]+?)": "<img src=\"$1\" alt=\"$2\" />",											// Image with title
 		"url": "<a href=\"$1\" target=\"_blank\" title=\"$1\">$1</a>",									// Simple URL
 		"url=([^\\[\\]<>]+?)": "<a href=\"$1\" target=\"_blank\" title=\"$2\">$2</a>",					// URL with title
+		"media=https?:\\/\\/.*(youtube\\.com\\/watch\\?v=([^&\\?\\]]+).*)": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$2\"></iframe>",	//youtube video embedding
 		"style": function(complete, y) {																// Example of function use
 			return y.toUpperCase();
 		}
@@ -29,8 +30,7 @@ angular.module('bbModule', [])
 					var contents = $element.html().replace(/^\s+|\s+$/i, '');
 
 					for(var i in snippets) {
-						var regexp = new RegExp('\\[' + i + '\\](.+?)\\[\/' + i.replace(/[^a-z]/g, '') + '\\]', 'gi');
-
+						var regexp = new RegExp('\\[' + i + '\\](.+?)?\\[\/' + i.replace(/=.*/g, '') + '\\]', 'gi');
 						contents = contents.replace(regexp, snippets[i]);
 					}
 
